@@ -1,12 +1,7 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.21)
+project(HoldTriggerMaker VERSION 1.0.0 LANGUAGES CXX C)
 
-project(HoldTriggerMaker VERSION 1.0.0 LANGUAGES CXX)
-
-if(DEFINED ENV{GEODE_SDK})
-    list(APPEND CMAKE_PREFIX_PATH "$ENV{GEODE_SDK}")
-endif()
-
-find_package(Geode REQUIRED)
+include($ENV{GEODE_SDK}/cmake/Geode.cmake)
 
 setup_geode_mod(HoldTriggerMaker)
 
