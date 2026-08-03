@@ -14,7 +14,7 @@ jobs:
         config:
           - name: Windows
             os: windows-latest
-            extra-flags: ""
+            extra-flags: "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
     name: ${{ matrix.config.name }}
     runs-on: ${{ matrix.config.os }}
@@ -27,4 +27,5 @@ jobs:
         with:
           bindings: geode-sdk/bindings
           bindings-ref: main
+          extra-flags: ${{ matrix.config.extra-flags }}
           combine: true
