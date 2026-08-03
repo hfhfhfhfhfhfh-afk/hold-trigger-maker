@@ -9,10 +9,16 @@ class $modify(MyPlayerObject, PlayerObject) {
         PlayerObject::pushButton(p0);
 
         if (m_inPlayground && p0 == PlayerButton::Jump) {
+            auto editor = LevelEditorLayer::get();
+            if (!editor) return;
+
             float playerX = m_position.x;
-            
-            log::info("Player hold down at X: {}", playerX);
-            Notification::create(fmt::format("Hold Start X: {:.2f}", playerX), NotificationIcon::Info)->show();
+            float playerY = m_position.y;
+
+            auto trigger = editor->createObject(2885, CCPoint(playerX, playerY), true);
+            if (trigger) {
+                editor->m_objects->addObject(trigger);
+            }
         }
     }
 
@@ -20,10 +26,16 @@ class $modify(MyPlayerObject, PlayerObject) {
         PlayerObject::releaseButton(p0);
 
         if (m_inPlayground && p0 == PlayerButton::Jump) {
-            float playerX = m_position.x;
+            auto editor = LevelEditorLayer::get();
+            if (!editor) return;
 
-            log::info("Player released at X: {}", playerX);
-            Notification::create(fmt::format("Hold End X: {:.2f}", playerX), NotificationIcon::Info)->show();
+            float playerX = m_position.x;
+            float playerY = m_position.y;
+
+            auto trigger = editor->createObject(2885, CCPoint(playerX, playerY), true);
+            if (trigger) {
+                editor->m_objects->addObject(trigger);
+            }
         }
     }
 };
