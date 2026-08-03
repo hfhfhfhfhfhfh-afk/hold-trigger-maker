@@ -1,17 +1,11 @@
 {
-	"geode": "$GEODE_VERSION",
+	"geode": "3.0.0",
 	"gd": {
-		"win": "2.2081",
-		"android": "2.2081",
-		"mac": "2.2081",
-		"ios": "2.2081"
+		"win": "2.2074"
 	},
-	"id": "$MOD_ID",
-	"name": "$MOD_NAME",
-	"version": "$MOD_VERSION",
-	"developer": "$MOD_DEVELOPER",
-	"description": "$MOD_DESCRIPTION",
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
-	}
+	"id": "speaker2k17.hold_trigger_maker",
+	"name": "Hold Trigger Maker",
+	"version": "v1.0.0-alpha.1",
+	"developer": "Speaker2k17",
+	"description": "Automatyczne stawianie triggerów Hold na podstawie gry/playtestu w edytorze."
 }
