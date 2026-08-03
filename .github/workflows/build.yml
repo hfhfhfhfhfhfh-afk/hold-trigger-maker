@@ -26,4 +26,5 @@ jobs:
         with:
           bindings: geode-sdk/bindings
           bindings-ref: main
+          install-dependencies: true
           combine: true
