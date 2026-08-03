@@ -21,12 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Geode CLI
-        uses: geode-sdk/install-cli@main
-
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
         with:
-          bindings: geode-sdk/bindings
-          bindings-ref: main
           combine: true
