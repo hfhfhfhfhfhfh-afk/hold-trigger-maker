@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Geode CLI
-        uses: geode-sdk/install-geode-cli@main
+        uses: geode-sdk/install-cli@main
 
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
